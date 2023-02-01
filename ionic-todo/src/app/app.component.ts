@@ -1,19 +1,22 @@
+import { NavController } from '@ionic/angular';
 import { Component } from '@angular/core';
+import { Todo } from './types/Todo';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [
-    { title: 'Todos', url: '/folder/Todos', icon: 'checkmark' },
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
-  ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
-}
+
+  todos: Todo[] = []
+  newTodo: string = ''
+
+  addTodo():void{
+    if(this.newTodo){
+      let todo = new Todo()
+      todo.name = this.newTodo
+      todo.isCompleted = true
+      this.todos.push(todo)
+      this.newTodo = ''
+  }
+}}
