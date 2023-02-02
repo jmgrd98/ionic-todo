@@ -1,4 +1,7 @@
 <section class="todoContainer">
   <ion-checkbox (click)="check()" slot="start"></ion-checkbox>
 <p>{{todoName}}</p>
+
+<ion-icon (click)="editTodo()" name="create-outline"></ion-icon>
+<ion-icon (click)="deleteTodo()" name="trash-outline"></ion-icon>
 </section>
