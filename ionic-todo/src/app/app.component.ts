@@ -15,10 +15,9 @@ export class AppComponent {
     if(this.newTodo){
       let todo = new Todo()
       todo.name = this.newTodo
-      todo.isCompleted = true
       this.todos.push(todo)
       this.newTodo = ''
-      localStorage.setItem('newTodo', todo.name)
+      localStorage.setItem('todos', JSON.stringify(this.todos))
   }
 }
   // localStorage.setItem('newTodo', this.newTodo)

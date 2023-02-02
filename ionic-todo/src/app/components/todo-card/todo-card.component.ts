@@ -10,4 +10,9 @@ export class TodoCardComponent {
   @Input() todoName: string = ''
   @Input() isCompleted: boolean = false
 
+  check(){
+    this.isCompleted = true
+    console.log(this.isCompleted)
+  }
+
 }
