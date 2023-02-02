@@ -18,5 +18,10 @@ export class AppComponent {
       todo.isCompleted = true
       this.todos.push(todo)
       this.newTodo = ''
+      localStorage.setItem('newTodo', todo.name)
   }
-}}
+}
+  // localStorage.setItem('newTodo', this.newTodo)
+
+
+}
